@@ -1,0 +1,6 @@
+{
+  "name": "Glow Beauty Studio",
+  "description": "Premier luxury salon and spa with 3D interactive showcase, bespoke treatments, bridal packages, and online appointment booking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

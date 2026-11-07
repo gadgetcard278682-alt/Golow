@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glow Beauty Studio — Luxury Salon &amp; Spa</title>
+<meta name="description" content="Glow Beauty Studio — Premier luxury salon and spa for facials, hair care, bridal makeup, nail art, and holistic wellness.">
+<meta name="theme-color" content="#19120f">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9C%A8%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg-dark: #19120f;
+  --bg-dark-glass: rgba(25, 18, 15, 0.94);
+  --gold: #c59b53;
+  --gold-light: #dfc18b;
+  --gold-grad: linear-gradient(135deg, #dfc18b 0%, #b3853b 100%);
+  --cream: #faf5ee;
+  --card-bg: #ffffff;
+  --text-main: #2e231e;
+  --text-muted: #6e5f58;
+  --border: rgba(197, 155, 83, 0.25);
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Jost', sans-serif;
+  --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 20px 45px -10px rgba(25, 18, 15, 0.25);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body { font: 300 16px/1.8 var(--sans); color: var(--text-main); background: var(--cream); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; line-height: 1.15; color: var(--text-main); }
+a { color: inherit; text-decoration: none; transition: 0.3s ease; }
+ul { list-style: none; }
+img { width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.22em;
+  color: var(--gold); font-weight: 600; margin-bottom: 0.6rem;
+}
+.eyebrow::before { content: ""; width: 24px; height: 1px; background: currentColor; }
+
+h2 { font-size: clamp(2.2rem, 4.2vw, 3.4rem); margin-bottom: 1rem; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  padding: 0.95rem 2.2rem; background: var(--gold-grad); color: #fff;
+  border: 1px solid transparent; font: 500 0.8rem var(--sans); letter-spacing: 0.16em;
+  text-transform: uppercase; border-radius: 3px; cursor: pointer; transition: all 0.35s ease;
+  box-shadow: 0 8px 24px -8px rgba(179, 133, 59, 0.6);
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 12px 28px -6px rgba(179, 133, 59, 0.8); color: #fff; }
+.btn.btn-outline { background: transparent; border-color: #fff; color: #fff; box-shadow: none; }
+.btn.btn-outline:hover { background: #fff; color: var(--bg-dark); }
+.btn.btn-sm { padding: 0.6rem 1.4rem; font-size: 0.72rem; }
+
+/* NAVBAR */
+nav {
+  position: fixed; inset: 0 0 auto; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.3rem clamp(1.2rem, 5vw, 4.5rem); color: #fff; transition: 0.4s ease;
+}
+nav.scrolled {
+  background: var(--bg-dark-glass); backdrop-filter: blur(12px);
+  padding-block: 0.85rem; border-bottom: 1px solid var(--border);
+}
+.logo { font: 600 2.1rem/1 var(--serif); color: #fff; letter-spacing: 0.04em; }
+.logo small { display: block; font: 300 0.65rem var(--sans); letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-light); }
+
+.nav-links { display: flex; align-items: center; gap: 2rem; }
+.nav-links a {
+  font-size: 0.75rem; letter-spacing: 0.16em; font-weight: 500;
+  position: relative; padding: 0.2rem 0; color: #eae1d9;
+}
+.nav-links a::after {
+  content: ""; position: absolute; left: 0; bottom: -3px; width: 0; height: 1.5px;
+  background: var(--gold-light); transition: width 0.3s;
+}
+.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+.nav-links a.active { color: var(--gold-light); }
+.nav-toggle { display: none; background: none; border: 0; color: #fff; font-size: 1.8rem; cursor: pointer; }
+
+/* HERO */
+.hero {
+  position: relative; min-height: 94vh; display: flex; align-items: center;
+  padding: 8.5rem clamp(1.2rem, 5vw, 5rem) 5rem; color: #fff; background: var(--bg-dark);
+  overflow: hidden;
+}
+.hero-bg { position: absolute; inset: 0; z-index: 1; opacity: 0.45; }
+.hero::after {
+  content: ""; position: absolute; inset: 0; z-index: 2;
+  background: linear-gradient(90deg, rgba(25,18,15,0.96) 0%, rgba(25,18,15,0.72) 50%, rgba(25,18,15,0.25) 100%);
+}
+.hero-content { position: relative; z-index: 3; max-width: 42rem; animation: fadeIn 1.2s ease; }
+.hero h1 { font-size: clamp(3.2rem, 7vw, 5.8rem); margin: 0.8rem 0 1.2rem; font-weight: 500; }
+.hero h1 em { color: var(--gold-light); font-style: italic; font-weight: 400; }
+.hero p { font-size: 1.05rem; margin-bottom: 2.2rem; color: #ded3cb; letter-spacing: 0.03em; }
+.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+/* 3D FLOATING HERO BADGE */
+.hero-3d-badge {
+  position: absolute; right: 5%; bottom: 12%; z-index: 4;
+  background: rgba(25, 18, 15, 0.75); backdrop-filter: blur(15px);
+  border: 1px solid var(--border); padding: 1.4rem 2rem; border-radius: 12px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.5); transform-style: preserve-3d;
+  animation: float3D 6s ease-in-out infinite; display: none;
+}
+@media (min-width: 1024px) { .hero-3d-badge { display: block; } }
+.hero-3d-badge b { font: 600 2.2rem var(--serif); color: var(--gold-light); display: block; line-height: 1; }
+.hero-3d-badge span { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: #ddd; }
+
+@keyframes float3D {
+  0%, 100% { transform: perspective(1000px) rotateY(-8deg) rotateX(6deg) translateY(0); }
+  50% { transform: perspective(1000px) rotateY(6deg) rotateX(-6deg) translateY(-15px); }
+}
+
+/* SECTION LAYOUT */
+.section { padding: clamp(4rem, 7vw, 6.5rem) clamp(1.2rem, 5vw, 5rem); max-width: 1400px; margin: auto; }
+.section-head { text-align: center; max-width: 650px; margin: 0 auto 3.5rem; }
+.section-head .eyebrow { justify-content: center; }
+
+/* ========================================================
+   3D TILT PICTURE COMPONENT (CSS 3D Engine)
+======================================================== */
+.tilt-card-3d {
+  position: relative;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+.tilt-inner-3d {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out, box-shadow 0.3s ease;
+  box-shadow: var(--shadow-sm);
+  background: #111;
+}
+.tilt-inner-3d::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255,255,255,0.3) 0%, transparent 65%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 5;
+}
+.tilt-card-3d:hover .tilt-inner-3d {
+  box-shadow: 0 30px 60px -15px rgba(25, 18, 15, 0.45);
+}
+.tilt-card-3d:hover .tilt-inner-3d::after {
+  opacity: 1;
+}
+.tilt-inner-3d img {
+  transform: translateZ(0) scale(1);
+  transition: transform 0.4s ease;
+}
+.tilt-card-3d:hover .tilt-inner-3d img {
+  transform: translateZ(25px) scale(1.08);
+}
+.tilt-content-3d {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 2rem 1.4rem 1.4rem;
+  background: linear-gradient(to top, rgba(20, 14, 11, 0.95) 0%, transparent 100%);
+  color: #fff;
+  z-index: 4;
+  transform: translateZ(40px);
+  transition: transform 0.3s ease;
+}
+
+/* ABOUT */
+.about-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(2.5rem, 5vw, 5rem); align-items: center; }
+.about-3d-box {
+  position: relative; border-radius: 14px;
+  aspect-ratio: 4/5;
+}
+.stats { display: flex; gap: 2.5rem; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+.stats b { display: block; font: 600 2.4rem/1 var(--serif); color: var(--gold); margin-bottom: 0.3rem; }
+.stats span { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); }
+
+/* SERVICES */
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+.service-card {
+  background: var(--card-bg); border-radius: 14px; overflow: hidden;
+  box-shadow: var(--shadow-sm); border: 1px solid rgba(0,0,0,0.04);
+  display: flex; flex-direction: column;
+}
+.service-img-3d { height: 240px; }
+.service-body { padding: 1.6rem; display: flex; flex-direction: column; flex-grow: 1; }
+.service-body h3 { font-size: 1.5rem; margin-bottom: 0.4rem; }
+.service-body p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.2rem; flex-grow: 1; }
+.service-meta {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 1.2rem; font-size: 0.85rem; border-top: 1px dashed #eee; padding-top: 0.8rem;
+}
+.service-price { font-weight: 600; color: var(--gold); font-size: 1.05rem; }
+
+/* BRIDAL BANNER */
+.bridal-banner {
+  background: var(--bg-dark); color: #f5ece4; border-radius: 16px;
+  display: grid; grid-template-columns: 1fr 1.1fr; overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+.bridal-text { padding: clamp(2.5rem, 5vw, 4.5rem); display: flex; flex-direction: column; justify-content: center; }
+.bridal-text h2 { color: #fff; }
+.package-list { margin: 1.8rem 0 2rem; }
+.package-list li {
+  display: flex; justify-content: space-between; padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(223, 193, 139, 0.2); font-size: 0.95rem;
+}
+.package-list li strong { color: var(--gold-light); }
+
+/* GALLERY GRID (3D TILT PICTURES) */
+.gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.4rem; }
+.gallery-3d-card { aspect-ratio: 1/1; }
+.gallery-title-3d { font-family: var(--serif); font-size: 1.35rem; color: var(--gold-light); }
+.gallery-tag-3d { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.15em; color: #ddd; }
+
+/* FEATURES */
+.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.6rem; }
+.feature-box {
+  background: var(--card-bg); padding: 2rem 1.6rem; border-radius: 10px;
+  border-top: 3px solid var(--gold); box-shadow: var(--shadow-sm);
+  transition: transform 0.3s;
+}
+.feature-box:hover { transform: translateY(-4px); }
+.feature-box h3 { font-size: 1.35rem; margin-bottom: 0.6rem; }
+.feature-box p { font-size: 0.9rem; color: var(--text-muted); }
+
+/* TESTIMONIALS */
+.testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.8rem; }
+.testimonial-card {
+  background: var(--card-bg); padding: 2rem; border-radius: 12px;
+  box-shadow: var(--shadow-sm); position: relative; display: flex; flex-direction: column;
+}
+.stars { color: var(--gold); letter-spacing: 3px; font-size: 0.9rem; margin-bottom: 0.8rem; }
+.testimonial-card p { font-size: 0.95rem; font-style: italic; color: var(--text-main); margin-bottom: 1.5rem; flex-grow: 1; }
+.author { display: flex; align-items: center; gap: 0.9rem; }
+.author-avatar {
+  width: 44px; height: 44px; border-radius: 50%; background: var(--gold-grad);
+  display: grid; place-items: center; font-family: var(--serif); font-weight: 600; color: #fff;
+}
+.author-info h4 { font-size: 1.05rem; }
+.author-info span { font-size: 0.75rem; color: var(--text-muted); }
+
+/* FAQ ACCORDION */
+.faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
+.faq-item { background: var(--card-bg); border-radius: 8px; border: 1px solid rgba(0,0,0,0.05); overflow: hidden; }
+.faq-question {
+  width: 100%; text-align: left; padding: 1.2rem 1.5rem; font-family: var(--serif);
+  font-size: 1.25rem; font-weight: 600; background: none; border: 0; color: var(--text-main);
+  display: flex; justify-content: space-between; align-items: center; cursor: pointer;
+}
+.faq-question span { transition: transform 0.3s; font-size: 1.4rem; color: var(--gold); }
+.faq-answer { padding: 0 1.5rem 1.2rem; font-size: 0.92rem; color: var(--text-muted); display: none; }
+.faq-item.active .faq-answer { display: block; }
+.faq-item.active .faq-question span { transform: rotate(45deg); }
+
+/* BOOKING & CONTACT */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+.contact-info { background: var(--bg-dark); color: #fff; padding: clamp(2rem, 4vw, 3.5rem); border-radius: 12px; }
+.contact-info h2 { color: #fff; }
+.contact-info p { color: #d6c8bf; margin-bottom: 1.8rem; }
+.info-items li { display: flex; gap: 1rem; margin-bottom: 1.3rem; font-size: 0.95rem; align-items: center; }
+.info-items i {
+  width: 38px; height: 38px; border-radius: 50%; background: rgba(197, 155, 83, 0.2);
+  color: var(--gold-light); display: grid; place-items: center; font-style: normal;
+}
+.contact-form-wrap {
+  background: var(--card-bg); padding: clamp(2rem, 4vw, 3.5rem);
+  border-radius: 12px; box-shadow: var(--shadow-lg);
+}
+.contact-form-wrap h3 { font-size: 1.8rem; margin-bottom: 1.5rem; }
+form .form-group { margin-bottom: 1.2rem; }
+form label { display: block; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem; color: var(--text-muted); }
+form input, form select {
+  width: 100%; padding: 0.85rem; border: 1px solid #e2d8cf; border-radius: 4px;
+  background: #fdfbf9; font: 300 0.95rem var(--sans); color: var(--text-main);
+  transition: border-color 0.3s;
+}
+form input:focus, form select:focus { outline: none; border-color: var(--gold); background: #fff; }
+form input.invalid, form select.invalid { border-color: #ba3939; background: #fff5f5; }
+.form-note { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.8rem; }
+.form-alert {
+  display: none; padding: 1rem; border-radius: 4px; font-size: 0.9rem;
+  margin-top: 1.2rem; background: #f0fdf4; border: 1px solid #bbf7d0; color: #166534;
+}
+
+/* FOOTER */
+footer {
+  background: var(--bg-dark); color: #d6c7bd; padding: 4rem clamp(1.2rem, 5vw, 5rem) 2rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.footer-top { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; margin-bottom: 3rem; }
+.socials { display: flex; gap: 1rem; }
+.socials a {
+  width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--border);
+  display: grid; place-items: center; color: var(--gold-light); font-size: 0.85rem;
+}
+.socials a:hover { background: var(--gold); color: #fff; border-color: var(--gold); }
+.footer-bottom {
+  text-align: center; font-size: 0.8rem; opacity: 0.7;
+  border-top: 1px solid rgba(255,255,255,0.06); padding-top: 2rem;
+}
+
+/* MODAL */
+.modal {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 200;
+  display: none; place-items: center; padding: 2rem;
+}
+.modal.open { display: grid; }
+.modal-content { max-width: 800px; max-height: 85vh; border-radius: 8px; overflow: hidden; }
+.modal-close {
+  position: absolute; top: 1.5rem; right: 2rem; background: none; border: 0;
+  color: #fff; font-size: 2.5rem; cursor: pointer;
+}
+
+/* BACK TO TOP */
+.top-btn {
+  position: fixed; right: 1.5rem; bottom: 1.5rem; width: 44px; height: 44px;
+  background: var(--bg-dark); border: 1px solid var(--gold); border-radius: 50%;
+  color: var(--gold-light); font-size: 1.2rem; cursor: pointer; opacity: 0;
+  pointer-events: none; transition: 0.3s ease; z-index: 90;
+}
+.top-btn.visible { opacity: 1; pointer-events: auto; }
+
+/* MEDIA QUERIES */
+@media (max-width: 980px) {
+  .about-grid, .bridal-banner, .contact-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .nav-toggle { display: block; }
+  .nav-links {
+    position: fixed; top: 0; right: -100%; width: 75%; max-width: 320px; height: 100vh;
+    background: var(--bg-dark); flex-direction: column; justify-content: center;
+    gap: 1.8rem; transition: right 0.4s ease; box-shadow: -5px 0 25px rgba(0,0,0,0.5);
+  }
+  .nav-links.open { right: 0; }
+  .hero h1 { font-size: clamp(2.8rem, 11vw, 3.8rem); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav id="navbar">
+  <a class="logo" href="#home">Glow<small>Beauty Studio</small></a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle Menu">☰</button>
+  <div class="nav-links" id="navLinks">
+    <a href="#home" class="active">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#services">SERVICES</a>
+    <a href="#bridal">BRIDAL</a>
+    <a href="#gallery">3D GALLERY</a>
+    <a href="#reviews">TESTIMONIALS</a>
+    <a href="#faq">FAQ</a>
+    <a href="#book" class="btn btn-sm" style="margin-left: 0.5rem;">BOOK APPOINTMENT</a>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<header class="hero" id="home">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=80" alt="Luxury Spa Massage">
+  </div>
+  
+  <!-- 3D Interactive Floating Badge -->
+  <div class="hero-3d-badge">
+    <b>4.9 ★</b>
+    <span>Award-Winning Salon</span>
+  </div>
+
+  <div class="hero-content">
+    <div class="eyebrow" style="color:var(--gold-light);">LUXURY SALON &amp; SPA</div>
+    <h1>Glow Your <em>Natural</em> Beauty</h1>
+    <p>Relax · Rejuvenate · Feel Beautiful. Experience bespoke styling, holistic spa rituals, and radiant bridal transformations designed exclusively for you.</p>
+    <div class="hero-btns">
+      <a class="btn" href="#book">Book An Appointment</a>
+      <a class="btn btn-outline" href="#services">Our Services</a>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT SECTION -->
+<section class="section" id="about">
+  <div class="about-grid">
+    <!-- 3D Tilt Picture for About Us -->
+    <div class="tilt-card-3d about-3d-box js-3d-tilt">
+      <div class="tilt-inner-3d">
+        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" alt="Hairstyling in Studio">
+        <div class="tilt-content-3d">
+          <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.18em; color:var(--gold-light);">Studio Masterpiece</div>
+          <h3 style="color:#fff; font-size:1.4rem;">Precision &amp; Care</h3>
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <div class="eyebrow">ABOUT US</div>
+      <h2>Where Beauty Meets Pure Wellness</h2>
+      <p style="color:var(--text-muted); margin-bottom:1rem;">
+        At Glow Beauty Studio, we believe true elegance begins with dedicated self-care. Our boutique salon and spa offers personalized treatments, international aesthetic trends, and a serene, calming environment designed to restore your glow.
+      </p>
+      <p style="color:var(--text-muted);">
+        Our certified master artists use only cruelty-free, dermatologist-tested luxury products to ensure your skin and hair radiate vitality and health.
+      </p>
+      <div class="stats">
+        <div><b>12+</b><span>Years Exp.</span></div>
+        <div><b>50k+</b><span>Happy Clients</span></div>
+        <div><b>100+</b><span>Treatments</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES SECTION (With 3D Hover Images) -->
+<section class="section" id="services" style="background:#f6f1e8;">
+  <div class="section-head">
+    <div class="eyebrow">OUR SERVICES</div>
+    <h2>Bespoke Salon &amp; Spa Treatments</h2>
+    <p style="color:var(--text-muted);">Select from our curated menu of head-to-toe beauty rituals crafted to enhance your natural radiance.</p>
+  </div>
+  
+  <div class="services-grid">
+    <!-- Service 1 -->
+    <div class="service-card">
+      <div class="tilt-card-3d service-img-3d js-3d-tilt">
+        <div class="tilt-inner-3d">
+          <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80" alt="Facial Therapy">
+        </div>
+      </div>
+      <div class="service-body">
+        <h3>Glow Radiance Facial</h3>
+        <p>Deep pore cleansing, ultrasonic hydration, and botanical vitamin infusions for an illuminated complexion.</p>
+        <div class="service-meta">
+          <span>⏱ 60 Mins</span>
+          <span class="service-price">From ₹1,999</span>
+        </div>
+        <button class="btn btn-sm select-service-btn" data-service="Glow Radiance Facial">Book Service</button>
+      </div>
+    </div>
+
+    <!-- Service 2 -->
+    <div class="service-card">
+      <div class="tilt-card-3d service-img-3d js-3d-tilt">
+        <div class="tilt-inner-3d">
+          <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=600&q=80" alt="Hair Styling">
+        </div>
+      </div>
+      <div class="service-body">
+        <h3>Hair Couture &amp; Spa</h3>
+        <p>Precision haircuts, bespoke balayage, keratin smoothing, and deep detoxifying hair spa therapies.</p>
+        <div class="service-meta">
+          <span>⏱ 45–90 Mins</span>
+          <span class="service-price">From ₹1,499</span>
+        </div>
+        <button class="btn btn-sm select-service-btn" data-service="Hair Couture & Spa">Book Service</button>
+      </div>
+    </div>
+
+    <!-- Service 3 -->
+    <div class="service-card">
+      <div class="tilt-card-3d service-img-3d js-3d-tilt">
+        <div class="tilt-inner-3d">
+          <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=600&q=80" alt="Luxury Nails">
+        </div>
+      </div>
+      <div class="service-body">
+        <h3>Nail Extensions &amp; Art</h3>
+        <p>Russian manicures, gel extensions, custom chrome finishes, and soothing paraffin spa pedicures.</p>
+        <div class="service-meta">
+          <span>⏱ 45 Mins</span>
+          <span class="service-price">From ₹1,199</span>
+        </div>
+        <button class="btn btn-sm select-service-btn" data-service="Nail Extensions & Art">Book Service</button>
+      </div>
+    </div>
+
+    <!-- Service 4 -->
+    <div class="service-card">
+      <div class="tilt-card-3d service-img-3d js-3d-tilt">
+        <div class="tilt-inner-3d">
+          <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=600&q=80" alt="Makeup Artistry">
+        </div>
+      </div>
+      <div class="service-body">
+        <h3>Party &amp; Glam Makeup</h3>
+        <p>Long-wear HD and airbrush makeup tailored to your skin tone and event lighting for picture-perfect results.</p>
+        <div class="service-meta">
+          <span>⏱ 60 Mins</span>
+          <span class="service-price">From ₹3,499</span>
+        </div>
+        <button class="btn btn-sm select-service-btn" data-service="Party & Glam Makeup">Book Service</button>
+      </div>
+    </div>
+
+    <!-- Service 5 -->
+    <div class="service-card">
+      <div class="tilt-card-3d service-img-3d js-3d-tilt">
+        <div class="tilt-inner-3d">
+          <img src="https://images.unsplash.com/photo-1583001809873-a1284a5f4581?auto=format&fit=crop&w=600&q=80" alt="Eyelashes and Eyebrows">
+        </div>
+      </div>
+      <div class="service-body">
+        <h3>Lash Lift &amp; Brow Sculpt</h3>
+        <p>Semi-permanent lash lifting, tinting, and micro-precision brow lamination for effortlessly striking eyes.</p>
+        <div class="service-meta">
+          <span>⏱ 40 Mins</span>
+          <span class="service-price">From ₹1,799</span>
+        </div>
+        <button class="btn btn-sm select-service-btn" data-service="Lash Lift & Brow">Book Service</button>
+      </div>
+    </div>
+
+    <!-- Service 6 -->
+    <div class="service-card">
+      <div class="tilt-card-3d service-img-3d js-3d-tilt">
+        <div class="tilt-inner-3d">
+          <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=600&q=80" alt="Body Spa">
+        </div>
+      </div>
+      <div class="service-body">
+        <h3>Aromatherapy Body Ritual</h3>
+        <p>Full-body holistic massage infused with pure essential oils to melt away tension and restore equilibrium.</p>
+        <div class="service-meta">
+          <span>⏱ 60 Mins</span>
+          <span class="service-price">From ₹2,499</span>
+        </div>
+        <button class="btn btn-sm select-service-btn" data-service="Aromatherapy Body Ritual">Book Service</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRIDAL SECTION -->
+<section class="section" id="bridal">
+  <div class="bridal-banner">
+    <div class="bridal-text">
+      <div class="eyebrow" style="color:var(--gold-light);">BRIDAL SUITE</div>
+      <h2>Look Stunning On Your Special Day</h2>
+      <p>From timeless bridal makeup to royal traditional hairstyling, our senior bridal artists ensure your most memorable day is truly unforgettable.</p>
+      
+      <ul class="package-list">
+        <li><span>Pre-Bridal Glow Ritual (Skin + Hair)</span><strong>₹8,999</strong></li>
+        <li><span>Engagement / Sangeet Glam Look</span><strong>₹9,500</strong></li>
+        <li><span>Royal HD Airbrush Bridal Makeup + Draping</span><strong>₹18,000</strong></li>
+      </ul>
+      <div>
+        <button class="btn select-service-btn" data-service="Royal HD Bridal Makeup">Book Bridal Consultation</button>
+      </div>
+    </div>
+    <div style="min-height: 420px; overflow:hidden;">
+      <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80" alt="Indian Bride in Royal Attire">
+    </div>
+  </div>
+</section>
+
+<!-- 3D GALLERY (Interactive 3D Tilt Pictures) -->
+<section class="section" id="gallery">
+  <div class="section-head">
+    <div class="eyebrow">INTERACTIVE 3D GALLERY</div>
+    <h2>Moments of Beauty in 3D</h2>
+    <p style="color:var(--text-muted);">Hover your mouse or swipe across any picture below to experience the interactive 3D depth and reflection.</p>
+  </div>
+  
+  <div class="gallery-grid">
+    <!-- 3D Image 1 -->
+    <div class="tilt-card-3d gallery-3d-card js-3d-tilt" data-full="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=80">
+      <div class="tilt-inner-3d">
+        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80" alt="Hairstyling">
+        <div class="tilt-content-3d">
+          <div class="gallery-tag-3d">Haute Coiffure</div>
+          <div class="gallery-title-3d">Signature Hair Design</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3D Image 2 -->
+    <div class="tilt-card-3d gallery-3d-card js-3d-tilt" data-full="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=80">
+      <div class="tilt-inner-3d">
+        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=600&q=80" alt="Flawless Makeup">
+        <div class="tilt-content-3d">
+          <div class="gallery-tag-3d">Glamour Artistry</div>
+          <div class="gallery-title-3d">Flawless Glam Look</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3D Image 3 -->
+    <div class="tilt-card-3d gallery-3d-card js-3d-tilt" data-full="https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=1200&q=80">
+      <div class="tilt-inner-3d">
+        <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=600&q=80" alt="Luxury Nails">
+        <div class="tilt-content-3d">
+          <div class="gallery-tag-3d">Nail Couture</div>
+          <div class="gallery-title-3d">Chrome Nail Art</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3D Image 4 -->
+    <div class="tilt-card-3d gallery-3d-card js-3d-tilt" data-full="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80">
+      <div class="tilt-inner-3d">
+        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=600&q=80" alt="Studio Ambiance">
+        <div class="tilt-content-3d">
+          <div class="gallery-tag-3d">Serenity</div>
+          <div class="gallery-title-3d">Spa Sanctum</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="section" style="background:#f4ece2;">
+  <div class="section-head">
+    <div class="eyebrow">OUR PROMISE</div>
+    <h2>Why Choose Glow?</h2>
+  </div>
+  <div class="features-grid">
+    <div class="feature-box">
+      <h3>Certified Master Artists</h3>
+      <p>International-certified hair stylists and celebrity makeup artists committed to perfection.</p>
+    </div>
+    <div class="feature-box">
+      <h3>Luxury Products Only</h3>
+      <p>100% skin-safe, cruelty-free luxury brands such as MAC, Huda Beauty, Dyson, and L'Oréal Professionnel.</p>
+    </div>
+    <div class="feature-box">
+      <h3>Hygiene First</h3>
+      <p>Medical-grade sterilized tools, sanitized stations, and single-use essentials for every client.</p>
+    </div>
+    <div class="feature-box">
+      <h3>Complimentary Consultation</h3>
+      <p>Every session begins with an expert skin and hair assessment to curate your personalized regimen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="reviews">
+  <div class="section-head">
+    <div class="eyebrow">TESTIMONIALS</div>
+    <h2>What Our Clients Say</h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p>“My bridal makeup was everything I ever dreamed of! It looked completely natural yet royal, and stayed intact through the night. Truly the best salon experience!”</p>
+      <div class="author">
+        <div class="author-avatar">P</div>
+        <div class="author-info">
+          <h4>Priya Sharma</h4>
+          <span>Bridal Client</span>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p>“The facial and head massage are pure bliss. The staff is warm, respectful, and so professional. I leave feeling completely refreshed every single time.”</p>
+      <div class="author">
+        <div class="author-avatar">N</div>
+        <div class="author-info">
+          <h4>Neha Verma</h4>
+          <span>Regular Guest</span>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p>“Spotless hygiene, calming atmosphere, and top-tier hair styling. My balayage turned out exactly like the reference picture. Highly recommended!”</p>
+      <div class="author">
+        <div class="author-avatar">A</div>
+        <div class="author-info">
+          <h4>Ananya Sen</h4>
+          <span>Monthly Visitor</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="section" id="faq">
+  <div class="section-head">
+    <div class="eyebrow">QUESTIONS</div>
+    <h2>Frequently Asked Questions</h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-question">Do I need to book an appointment in advance? <span>+</span></button>
+      <div class="faq-answer">While we do accept walk-ins based on availability, we strongly recommend pre-booking your slot to ensure no waiting time and uninterrupted attention from our senior stylists.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Are bridal makeup trials available? <span>+</span></button>
+      <div class="faq-answer">Yes, we offer paid trial sessions for bridal makeup and hair styling. The trial fee is fully adjusted against your final booking package once confirmed.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Which beauty brands do you use? <span>+</span></button>
+      <div class="faq-answer">We exclusively use premium, dermatologist-tested brands such as MAC, Bobbi Brown, Huda Beauty, Anastasia Beverly Hills, Dyson, and Olaplex.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">What is your cancellation or rescheduling policy? <span>+</span></button>
+      <div class="faq-answer">You can easily reschedule or cancel your appointment free of charge by giving us at least 4 hours of prior notice via phone or WhatsApp.</div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING & CONTACT SECTION -->
+<section class="section" id="book">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="eyebrow" style="color:var(--gold-light);">VISIT US</div>
+      <h2>Book Your Experience</h2>
+      <p>Drop by our studio or reserve your appointment online. Our concierge team will reach out within 30 minutes to confirm your visit.</p>
+      <ul class="info-items">
+        <li><i>◷</i> <span><strong>Hours:</strong> Mon–Sun: 10:00 AM – 8:30 PM</span></li>
+        <li><i>✆</i> <span><strong>Phone:</strong> <a href="tel:+919876543210">+91 98765 43210</a></span></li>
+        <li><i>✉</i> <span><strong>Email:</strong> <a href="mailto:hello@glowbeautystudio.in">hello@glowbeautystudio.in</a></span></li>
+        <li><i>⌖</i> <span><strong>Address:</strong> 123 Beauty Lane, Green Park, New Delhi - 110016</span></li>
+      </ul>
+      <div style="margin-top:2rem;">
+        <a href="https://wa.me/919876543210?text=Hello%20Glow%20Beauty%20Studio,%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" class="btn btn-outline" style="width:100%; text-align:center;">
+          Chat on WhatsApp 💬
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-form-wrap">
+      <h3>Request Appointment</h3>
+      <form id="bookingForm" novalidate>
+        <div class="form-group">
+          <label for="name">Full Name *</label>
+          <input type="text" id="name" placeholder="e.g. Riya Kapoor" required minlength="2">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number *</label>
+          <input type="tel" id="phone" placeholder="+91 98765 43210" required pattern="[0-9+ ]{10,14}">
+        </div>
+        <div class="form-group">
+          <label for="service">Select Service *</label>
+          <select id="service" required>
+            <option value="">-- Please select a service --</option>
+            <option value="Glow Radiance Facial">Glow Radiance Facial</option>
+            <option value="Hair Couture & Spa">Hair Couture &amp; Spa</option>
+            <option value="Nail Extensions & Art">Nail Extensions &amp; Art</option>
+            <option value="Party & Glam Makeup">Party &amp; Glam Makeup</option>
+            <option value="Lash Lift & Brow">Lash Lift &amp; Brow</option>
+            <option value="Aromatherapy Body Ritual">Aromatherapy Body Ritual</option>
+            <option value="Royal HD Bridal Makeup">Royal HD Bridal Makeup</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="date">Preferred Date *</label>
+          <input type="date" id="date" required>
+        </div>
+        
+        <button type="submit" class="btn" style="width:100%;">Confirm Booking Request</button>
+        <div id="formAlert" class="form-alert"></div>
+        <div class="form-note">* Your information is kept completely confidential and secure.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX MODAL -->
+<div class="modal" id="imageModal">
+  <button class="modal-close" id="modalClose">&times;</button>
+  <div class="modal-content">
+    <img id="modalImg" src="" alt="Enlarged gallery view">
+  </div>
+</div>
+
+<!-- BACK TO TOP BUTTON -->
+<button class="top-btn" id="topBtn" title="Back to top">↑</button>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <a class="logo" href="#home">Glow<small>Beauty Studio</small></a>
+      <p style="margin-top:0.6rem; font-size:0.85rem; max-width:320px;">Redefining luxury beauty, pampering, and holistic wellness with heartfelt hospitality.</p>
+    </div>
+    <div class="socials">
+      <a href="#" aria-label="Instagram">Ig</a>
+      <a href="#" aria-label="Facebook">Fb</a>
+      <a href="#" aria-label="YouTube">Yt</a>
+      <a href="#" aria-label="Pinterest">Pin</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 Glow Beauty Studio. All Rights Reserved. Crafted for elegance &amp; glow.
+  </div>
+</footer>
+
+<!-- SCRIPTS & 3D ENGINE -->
+<script>
+// Navbar Scroll Blur Effect
+const navbar = document.getElementById('navbar');
+const topBtn = document.getElementById('topBtn');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
+  topBtn.classList.toggle('visible', window.scrollY > 600);
+});
+
+// Mobile Nav Toggle
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+navToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+});
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => navLinks.classList.remove('open'));
+});
+
+// Back to Top Action
+topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+// FAQ Accordion Toggle
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const parent = btn.parentElement;
+    const isActive = parent.classList.contains('active');
+    document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
+    if (!isActive) parent.classList.add('active');
+  });
+});
+
+// Service Auto-Select on "Book Service" Click
+document.querySelectorAll('.select-service-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    const serviceName = button.getAttribute('data-service');
+    const selectEl = document.getElementById('service');
+    if (selectEl && serviceName) {
+      selectEl.value = serviceName;
+      document.getElementById('book').scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('name').focus();
+    }
+  });
+});
+
+// Form Validation and Booking Confirmation
+const bookingForm = document.getElementById('bookingForm');
+const formAlert = document.getElementById('formAlert');
+const dateInput = document.getElementById('date');
+
+if (dateInput) {
+  const today = new Date().toISOString().split('T')[0];
+  dateInput.min = today;
+}
+
+bookingForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  let isValid = true;
+  const inputs = bookingForm.querySelectorAll('input[required], select[required]');
+
+  inputs.forEach(input => {
+    if (!input.checkValidity() || !input.value.trim()) {
+      input.classList.add('invalid');
+      isValid = false;
+    } else {
+      input.classList.remove('invalid');
+    }
+  });
+
+  if (!isValid) {
+    formAlert.style.display = 'block';
+    formAlert.style.background = '#fef2f2';
+    formAlert.style.borderColor = '#fca5a5';
+    formAlert.style.color = '#991b1b';
+    formAlert.textContent = 'Please fill out all required fields correctly.';
+    return;
+  }
+
+  const nameVal = document.getElementById('name').value.trim();
+  const serviceVal = document.getElementById('service').value;
+
+  formAlert.style.display = 'block';
+  formAlert.style.background = '#f0fdf4';
+  formAlert.style.borderColor = '#bbf7d0';
+  formAlert.style.color = '#166534';
+  formAlert.innerHTML = `Thank you, <strong>${nameVal}</strong>! Your appointment request for <strong>${serviceVal}</strong> has been received. Our team will contact you shortly to confirm.`;
+
+  bookingForm.reset();
+  if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+});
+
+// Lightbox Modal for Gallery
+const imageModal = document.getElementById('imageModal');
+const modalImg = document.getElementById('modalImg');
+const modalClose = document.getElementById('modalClose');
+
+document.querySelectorAll('.gallery-3d-card').forEach(item => {
+  item.addEventListener('click', () => {
+    const fullSrc = item.getAttribute('data-full');
+    modalImg.src = fullSrc;
+    imageModal.classList.add('open');
+  });
+});
+
+modalClose.addEventListener('click', () => imageModal.classList.remove('open'));
+imageModal.addEventListener('click', (e) => {
+  if (e.target === imageModal) imageModal.classList.remove('open');
+});
+
+/* ========================================================
+   VANILLA 3D TILT ENGINE FOR PICTURES (TOUCH & MOUSE)
+======================================================== */
+document.querySelectorAll('.js-3d-tilt').forEach(card => {
+  const inner = card.querySelector('.tilt-inner-3d');
+
+  function handleMove(clientX, clientY) {
+    const rect = card.getBoundingClientRect();
+    const x = clientX - rect.left;
+    const y = clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const deltaX = (x - centerX) / centerX;
+    const deltaY = (y - centerY) / centerY;
+
+    // 3D Angle Calculations
+    const rotateX = -deltaY * 16;
+    const rotateY = deltaX * 16;
+
+    inner.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+    inner.style.setProperty('--mouse-x', `${(x / rect.width) * 100}%`);
+    inner.style.setProperty('--mouse-y', `${(y / rect.height) * 100}%`);
+  }
+
+  function resetTilt() {
+    inner.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+  }
+
+  // Mouse Events (PC)
+  card.addEventListener('mousemove', (e) => handleMove(e.clientX, e.clientY));
+  card.addEventListener('mouseleave', resetTilt);
+
+  // Touch Events (Mobile)
+  card.addEventListener('touchmove', (e) => {
+    if (e.touches.length > 0) {
+      handleMove(e.touches[0].clientX, e.touches[0].clientY);
+    }
+  }, { passive: true });
+  card.addEventListener('touchend', resetTilt);
+});
+</script>
+</body>
+</html>

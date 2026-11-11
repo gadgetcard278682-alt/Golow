@@ -61,11 +61,13 @@ export const FAQSection: React.FC = () => {
             <TiltCard3D className="w-full aspect-[4/5] shadow-3d-float rounded-3xl">
               <div className="relative w-full h-full">
                 <img
-                  src={conciergeImg}
+                  src="/assets/images/concierge_consult_spa.jpg"
                   alt="We Are Here To Assist - Luxury Studio Concierge & Consultation"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                   onError={(e) => {
-                    e.currentTarget.src = '/assets/images/concierge_consult_spa.jpg';
+                    if (conciergeImg && e.currentTarget.src !== conciergeImg) {
+                      e.currentTarget.src = conciergeImg;
+                    }
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#19120f] via-black/30 to-transparent opacity-85" />

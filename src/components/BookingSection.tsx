@@ -153,10 +153,12 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
             {/* Background Studio Ambience Image */}
             <div className="absolute inset-0 z-0 opacity-25 pointer-events-none">
               <img
-                src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1000&q=80"
+                src="/assets/images/concierge_consult_spa.jpg"
                 alt="Studio Sanctuary"
                 className="w-full h-full object-cover scale-105"
-                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  e.currentTarget.src = 'https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1000&q=80';
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#19120f] via-[#19120f]/80 to-[#19120f]/60" />
             </div>

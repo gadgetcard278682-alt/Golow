@@ -123,6 +123,9 @@ export const TransformationSlider: React.FC = () => {
               alt={`${activeCase.title} - After`}
               className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
               referrerPolicy="no-referrer"
+              onError={(e) => {
+                e.currentTarget.src = '/assets/images/bridal_imperial_art.jpg';
+              }}
             />
             <span className="absolute top-4 right-4 z-10 px-3 py-1 bg-[#19120f]/80 text-[#dfc18b] text-[11px] uppercase tracking-[0.16em] font-semibold rounded backdrop-blur-sm shadow">
               After Transformation
@@ -139,6 +142,9 @@ export const TransformationSlider: React.FC = () => {
                 className="absolute inset-0 w-full h-full object-cover object-center max-w-none"
                 style={{ width: containerRef.current ? `${containerRef.current.clientWidth}px` : '100%' }}
                 referrerPolicy="no-referrer"
+                onError={(e) => {
+                  e.currentTarget.src = '/assets/images/hydra_skin_glow.jpg';
+                }}
               />
               <span className="absolute top-4 left-4 z-10 px-3 py-1 bg-[#19120f]/80 text-[#ded3cb] text-[11px] uppercase tracking-[0.16em] font-semibold rounded backdrop-blur-sm shadow">
                 Before

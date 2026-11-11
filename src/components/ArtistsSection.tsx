@@ -42,6 +42,9 @@ export const ArtistsSection: React.FC<ArtistsSectionProps> = ({ onBookWithArtist
                       alt={member.name}
                       className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                       referrerPolicy="no-referrer"
+                      onError={(e) => {
+                        e.currentTarget.src = '/assets/images/hero_salon_beauty.jpg';
+                      }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent opacity-60" />
                     <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white text-xs transform-style-3d translate-z-10">

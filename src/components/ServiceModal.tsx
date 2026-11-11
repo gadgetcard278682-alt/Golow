@@ -37,6 +37,9 @@ export const ServiceModal: React.FC<ServiceModalProps> = ({
             alt={service.name}
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
+            onError={(e) => {
+              e.currentTarget.src = '/assets/images/hero_salon_beauty.jpg';
+            }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#19120f] via-transparent to-transparent opacity-90" />
           <div className="absolute bottom-5 left-6 right-6 text-white">

@@ -145,6 +145,9 @@ export const BridalSuite: React.FC<BridalSuiteProps> = ({ onBookBridal }) => {
                             alt={pkg.name}
                             className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-300"
                             referrerPolicy="no-referrer"
+                            onError={(e) => {
+                              e.currentTarget.src = '/assets/images/bridal_imperial_art.jpg';
+                            }}
                           />
                           <div className="absolute inset-0 bg-black/20" />
                         </div>
@@ -262,11 +265,11 @@ export const BridalSuite: React.FC<BridalSuiteProps> = ({ onBookBridal }) => {
               <TiltCard3D className="w-full max-w-md aspect-[3/4] shadow-3d-float rounded-3xl border border-[#c59b53]/40 overflow-hidden">
                 <div className="relative w-full h-full">
                   <img
-                    src={currentPackage.image || bridalImperialArtImg}
+                    src={currentPackage.image || '/assets/images/bridal_imperial_art.jpg'}
                     alt={currentPackage.name}
                     className="w-full h-full object-cover object-center transition-all duration-700"
                     onError={(e) => {
-                      e.currentTarget.src = '/assets/images/bridal_imperial_art_1793899837776.jpg';
+                      e.currentTarget.src = '/assets/images/bridal_imperial_art.jpg';
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#19120f] via-black/25 to-transparent opacity-90" />
@@ -306,11 +309,13 @@ export const BridalSuite: React.FC<BridalSuiteProps> = ({ onBookBridal }) => {
               <TiltCard3D className="w-full max-w-lg aspect-[4/3] rounded-3xl shadow-3d-float border border-[#dfc18b]/40 overflow-hidden relative group">
                 <div className="relative w-full h-full">
                   <img
-                    src={bridalImperialArtImg}
+                    src="/assets/images/bridal_imperial_art.jpg"
                     alt="Imperial Bridal Studio Royal Bride with Antique Kundan Jewelry"
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                     onError={(e) => {
-                      e.currentTarget.src = '/assets/images/bridal_imperial_art_1793899837776.jpg';
+                      if (bridalImperialArtImg && e.currentTarget.src !== bridalImperialArtImg) {
+                        e.currentTarget.src = bridalImperialArtImg;
+                      }
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#19120f] via-black/20 to-transparent opacity-85" />
@@ -337,11 +342,13 @@ export const BridalSuite: React.FC<BridalSuiteProps> = ({ onBookBridal }) => {
               <div className="hidden sm:block absolute -bottom-10 -right-4 lg:-right-8 w-48 sm:w-56 aspect-square rounded-2xl p-1.5 bg-gradient-to-br from-[#dfc18b]/50 via-[#c59b53]/25 to-[#19120f]/95 shadow-[0_24px_50px_rgba(0,0,0,0.85),0_0_25px_rgba(197,155,83,0.35)] backdrop-blur-xl border border-[#dfc18b]/50 z-20 animate-float-3d">
                 <div className="relative w-full h-full rounded-xl overflow-hidden group">
                   <img
-                    src={bridalCoutureDetailsImg}
+                    src="/assets/images/bridal_couture_details.jpg"
                     alt="Intricate Couture Bridal Dupatta and Jewelry Drape"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     onError={(e) => {
-                      e.currentTarget.src = '/assets/images/bridal_couture_details_1793899850599.jpg';
+                      if (bridalCoutureDetailsImg && e.currentTarget.src !== bridalCoutureDetailsImg) {
+                        e.currentTarget.src = bridalCoutureDetailsImg;
+                      }
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />

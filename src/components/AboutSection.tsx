@@ -15,11 +15,11 @@ export const AboutSection: React.FC = () => {
             <TiltCard3D className="aspect-[4/5] max-w-md mx-auto shadow-3d-card rounded-3xl">
               <div className="relative w-full h-full">
                 <img
-                  src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=80"
+                  src="/assets/images/hero_salon_beauty.jpg"
                   alt="Precision Hair Styling in Glow Beauty Studio"
                   className="w-full h-full object-cover object-center"
                   onError={(e) => {
-                    e.currentTarget.src = '/assets/images/hero_salon_beauty.jpg';
+                    e.currentTarget.src = 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=80';
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#19120f] via-transparent to-transparent opacity-85" />
@@ -40,11 +40,11 @@ export const AboutSection: React.FC = () => {
             {/* Overlapping Secondary 3D Photo (Layered Depth Element) */}
             <div className="hidden sm:block absolute -bottom-6 -right-4 w-44 h-48 rounded-2xl overflow-hidden border-2 border-[#dfc18b] shadow-3d-float z-20 transform-style-3d hover:translate-y-[-6px] transition-transform duration-300">
               <img
-                src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=500&q=80"
+                src="/assets/images/hydra_skin_glow.jpg"
                 alt="Aromatherapy Holistic Care"
                 className="w-full h-full object-cover"
                 onError={(e) => {
-                  e.currentTarget.src = '/assets/images/hydra_skin_glow.jpg';
+                  e.currentTarget.src = 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=500&q=80';
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />

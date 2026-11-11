@@ -86,10 +86,13 @@ export const LightboxModal: React.FC<LightboxModalProps> = ({
       >
         <div className="relative flex-1 max-h-[70vh] bg-black flex items-center justify-center overflow-hidden">
           <img
-            src={item.fullImage}
+            src={item.fullImage || item.image}
             alt={item.title}
             className="w-full h-full max-h-[70vh] object-contain"
             referrerPolicy="no-referrer"
+            onError={(e) => {
+              e.currentTarget.src = '/assets/images/bridal_imperial_art.jpg';
+            }}
           />
         </div>
 

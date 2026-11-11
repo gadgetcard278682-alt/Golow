@@ -91,11 +91,13 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
             <TiltCard3D className="w-full max-w-md aspect-[4/5] rounded-3xl shadow-3d-float border border-[#dfc18b]/45 overflow-hidden relative group">
               <div className="relative w-full h-full">
                 <img
-                  src={heroBeautyImg}
+                  src="/assets/images/hero_salon_beauty.jpg"
                   alt="Glow Beauty Studio Signature Model"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                   onError={(e) => {
-                    e.currentTarget.src = '/assets/images/hero_salon_beauty.jpg';
+                    if (heroBeautyImg && e.currentTarget.src !== heroBeautyImg) {
+                      e.currentTarget.src = heroBeautyImg;
+                    }
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#19120f] via-black/15 to-transparent opacity-80" />

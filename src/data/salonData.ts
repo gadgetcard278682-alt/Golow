@@ -183,7 +183,7 @@ export const SERVICES_DATA: Service[] = [
       'Plumps skin without needles or downtime',
       'Reduces hyperpigmentation and sun spots'
     ],
-    image: '/assets/images/hydra_glass_facial_1793899863729.jpg'
+    image: '/assets/images/hydra_glass_facial.jpg'
   }
 ];
 
@@ -220,8 +220,8 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     title: 'Sanctuary Holistic Spa Suite',
     tag: 'Serenity & Wellness',
     category: 'spa',
-    image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=600&q=80',
-    fullImage: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1400&q=80',
+    image: '/assets/images/concierge_consult_spa.jpg',
+    fullImage: '/assets/images/concierge_consult_spa.jpg',
     description: 'Our private aromatherapy treatment room designed with ambient warmth, live cedar, and calming sounds.'
   },
   {
@@ -229,8 +229,8 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     title: 'The Imperial Bridal Artistry',
     tag: 'Imperial Bridal',
     category: 'makeup',
-    image: '/assets/images/bridal_imperial_art_1793899837776.jpg',
-    fullImage: '/assets/images/bridal_imperial_art_1793899837776.jpg',
+    image: '/assets/images/bridal_imperial_art.jpg',
+    fullImage: '/assets/images/bridal_imperial_art.jpg',
     description: 'Traditional antique polki jewelry setting, royal kundan choker, floral bun, and flawless HD airbrush bridal finish.'
   },
   {
@@ -238,8 +238,8 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     title: 'Hydra-Infusion Glass Skin Sanctuary',
     tag: 'Clinical Aesthetic',
     category: 'spa',
-    image: '/assets/images/hydra_glass_facial_1793899863729.jpg',
-    fullImage: '/assets/images/hydra_glass_facial_1793899863729.jpg',
+    image: '/assets/images/hydra_glass_facial.jpg',
+    fullImage: '/assets/images/hydra_glass_facial.jpg',
     description: 'Vortex suction peeling, hyperbaric pure medical oxygen saturation, and Korean dewy glass skin illumination.'
   }
 ];
@@ -259,7 +259,7 @@ export const BRIDAL_PACKAGES: BridalPackage[] = [
       'Full body precision threading & waxing'
     ],
     recommendedFor: 'Brides-to-be 1-2 weeks before wedding ceremonies',
-    image: '/assets/images/hydra_skin_glow_1793899876817.jpg'
+    image: '/assets/images/hydra_skin_glow.jpg'
   },
   {
     id: 'engagement-glam',
@@ -274,7 +274,7 @@ export const BRIDAL_PACKAGES: BridalPackage[] = [
       'Change of lip touchup vial included'
     ],
     recommendedFor: 'Engagement, Cocktails, Sangeet & Reception parties',
-    image: '/assets/images/bridal_couture_details_1793899850599.jpg'
+    image: '/assets/images/bridal_couture_details.jpg'
   },
   {
     id: 'royal-airbrush',
@@ -291,7 +291,7 @@ export const BRIDAL_PACKAGES: BridalPackage[] = [
       'Luxury complimentary touch-up bridal survival kit'
     ],
     recommendedFor: 'Main Wedding Day / Pheras ceremony',
-    image: '/assets/images/bridal_imperial_art_1793899837776.jpg'
+    image: '/assets/images/bridal_imperial_art.jpg'
   },
   {
     id: 'imperial-suite',
@@ -307,7 +307,7 @@ export const BRIDAL_PACKAGES: BridalPackage[] = [
       'Dedicated senior artist assigned exclusively to you'
     ],
     recommendedFor: 'Complete luxury bridal journey from prep to wedding night',
-    image: '/assets/images/bridal_imperial_art_1793899837776.jpg'
+    image: '/assets/images/bridal_imperial_art.jpg'
   }
 ];
 

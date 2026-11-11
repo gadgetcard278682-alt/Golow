@@ -130,6 +130,9 @@ export const UserProfileModal: React.FC<UserProfileModalProps> = ({
                       alt={username}
                       className="w-full h-full object-cover"
                       referrerPolicy="no-referrer"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                      }}
                     />
                   ) : (
                     <div

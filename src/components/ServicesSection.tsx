@@ -116,6 +116,9 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                         alt={service.name}
                         className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                         referrerPolicy="no-referrer"
+                        onError={(e) => {
+                          e.currentTarget.src = '/assets/images/hero_salon_beauty.jpg';
+                        }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
 

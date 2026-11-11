@@ -185,6 +185,9 @@ export const Navbar: React.FC<NavbarProps> = ({
                     alt={userProfile.username}
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                    }}
                   />
                 ) : (
                   <div className={`w-full h-full bg-gradient-to-tr ${userProfile.avatarColor} flex items-center justify-center text-[10px] font-bold text-white font-serif`}>

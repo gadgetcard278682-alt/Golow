@@ -70,6 +70,9 @@ export const InteractiveGallery: React.FC = () => {
                   alt={item.title}
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    e.currentTarget.src = '/assets/images/bridal_imperial_art.jpg';
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#19120f] via-black/20 to-transparent opacity-70 group-hover:opacity-90 transition-opacity" />
 

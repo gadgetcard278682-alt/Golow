@@ -114,6 +114,8 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                       <img
                         src={service.image}
                         alt={service.name}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                         referrerPolicy="no-referrer"
                         onError={(e) => {

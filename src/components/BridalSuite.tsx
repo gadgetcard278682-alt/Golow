@@ -308,16 +308,21 @@ export const BridalSuite: React.FC<BridalSuiteProps> = ({ onBookBridal }) => {
               {/* Primary 3D Card: Full Royal Bride in Studio */}
               <TiltCard3D className="w-full max-w-lg aspect-[4/3] rounded-3xl shadow-3d-float border border-[#dfc18b]/40 overflow-hidden relative group">
                 <div className="relative w-full h-full">
-                  <img
-                    src="/assets/images/bridal_imperial_art.jpg"
-                    alt="Imperial Bridal Studio Royal Bride with Antique Kundan Jewelry"
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                    onError={(e) => {
-                      if (bridalImperialArtImg && e.currentTarget.src !== bridalImperialArtImg) {
-                        e.currentTarget.src = bridalImperialArtImg;
-                      }
-                    }}
-                  />
+                  <picture>
+                    <source srcSet="/assets/images/bridal_imperial_art.webp" type="image/webp" />
+                    <img
+                      src="/assets/images/bridal_imperial_art.jpg"
+                      alt="Imperial Bridal Studio Royal Bride with Antique Kundan Jewelry"
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                      onError={(e) => {
+                        if (bridalImperialArtImg && e.currentTarget.src !== bridalImperialArtImg) {
+                          e.currentTarget.src = bridalImperialArtImg;
+                        }
+                      }}
+                    />
+                  </picture>
                   <div className="absolute inset-0 bg-gradient-to-t from-[#19120f] via-black/20 to-transparent opacity-85" />
 
                   {/* Top Floating Badge */}
@@ -341,16 +346,21 @@ export const BridalSuite: React.FC<BridalSuiteProps> = ({ onBookBridal }) => {
               {/* Secondary Overlapping Floating 3D Card: Couture Dupatta & Mehendi Details */}
               <div className="hidden sm:block absolute -bottom-10 -right-4 lg:-right-8 w-48 sm:w-56 aspect-square rounded-2xl p-1.5 bg-gradient-to-br from-[#dfc18b]/50 via-[#c59b53]/25 to-[#19120f]/95 shadow-[0_24px_50px_rgba(0,0,0,0.85),0_0_25px_rgba(197,155,83,0.35)] backdrop-blur-xl border border-[#dfc18b]/50 z-20 animate-float-3d">
                 <div className="relative w-full h-full rounded-xl overflow-hidden group">
-                  <img
-                    src="/assets/images/bridal_couture_details.jpg"
-                    alt="Intricate Couture Bridal Dupatta and Jewelry Drape"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    onError={(e) => {
-                      if (bridalCoutureDetailsImg && e.currentTarget.src !== bridalCoutureDetailsImg) {
-                        e.currentTarget.src = bridalCoutureDetailsImg;
-                      }
-                    }}
-                  />
+                  <picture>
+                    <source srcSet="/assets/images/bridal_couture_details.webp" type="image/webp" />
+                    <img
+                      src="/assets/images/bridal_couture_details.jpg"
+                      alt="Intricate Couture Bridal Dupatta and Jewelry Drape"
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      onError={(e) => {
+                        if (bridalCoutureDetailsImg && e.currentTarget.src !== bridalCoutureDetailsImg) {
+                          e.currentTarget.src = bridalCoutureDetailsImg;
+                        }
+                      }}
+                    />
+                  </picture>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                   <div className="absolute bottom-3 left-3 right-3 text-white">
                     <span className="text-[9px] uppercase tracking-[0.2em] text-[#dfc18b] font-bold block">

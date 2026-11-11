@@ -22,7 +22,7 @@ export const SERVICES_DATA: Service[] = [
       'Diminishes fine dryness lines',
       'Refines pores without redness'
     ],
-    image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80'
+    image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=480&q=75'
   },
   {
     id: 'hair-couture',
@@ -45,7 +45,7 @@ export const SERVICES_DATA: Service[] = [
       'Ultra glossy, frizz-free texture',
       'Tailored to facial bone structure'
     ],
-    image: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=80'
+    image: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=480&q=75'
   },
   {
     id: 'nail-extensions',
@@ -68,7 +68,7 @@ export const SERVICES_DATA: Service[] = [
       'Protects natural nail beds',
       'Bespoke shapes (Almond, Coffin, Stiletto, Oval)'
     ],
-    image: 'https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=800&q=80'
+    image: 'https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=480&q=75'
   },
   {
     id: 'party-glam',
@@ -91,7 +91,7 @@ export const SERVICES_DATA: Service[] = [
       'Feels weightless and breathable',
       'Sweat and humidity resistant'
     ],
-    image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=80'
+    image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=480&q=75'
   },
   {
     id: 'gold-theme-ritual',
@@ -114,7 +114,7 @@ export const SERVICES_DATA: Service[] = [
       'Deep cellular relaxation and tension release',
       'Noticeably firmer, lifted facial contour'
     ],
-    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80'
+    image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=480&q=75'
   },
   {
     id: 'body-spa',
@@ -137,7 +137,7 @@ export const SERVICES_DATA: Service[] = [
       'Stimulates healthy lymphatic flow',
       'Enhances sleep quality and cellular rest'
     ],
-    image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80'
+    image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=480&q=75'
   },
   {
     id: 'japanese-head-spa',
@@ -160,7 +160,7 @@ export const SERVICES_DATA: Service[] = [
       'Relieves cranial headaches and eye fatigue',
       'Promotes thicker, healthier hair growth'
     ],
-    image: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=800&q=80'
+    image: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=480&q=75'
   },
   {
     id: 'hydra-glass-skin',
@@ -193,8 +193,8 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     title: 'Signature Coiffure & Balayage',
     tag: 'Haute Coiffure',
     category: 'hair',
-    image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80',
-    fullImage: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1400&q=80',
+    image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=500&q=75',
+    fullImage: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=75',
     description: 'Warm honey caramel balayage tailored with face-framing curtain layers and Dyson shine polish.'
   },
   {
@@ -202,8 +202,8 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     title: 'Flawless Glam & Airbrush',
     tag: 'Glamour Artistry',
     category: 'makeup',
-    image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=600&q=80',
-    fullImage: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1400&q=80',
+    image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=500&q=75',
+    fullImage: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=75',
     description: 'Satin velvet skin finish with soft smoked hazelnut eyes, sculpted cheekbones, and petal nude lips.'
   },
   {
@@ -211,8 +211,8 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     title: 'Chrome & Glazed Nail Art',
     tag: 'Nail Couture',
     category: 'nails',
-    image: 'https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=600&q=80',
-    fullImage: 'https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=1400&q=80',
+    image: 'https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=500&q=75',
+    fullImage: 'https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=900&q=75',
     description: 'Pearl chrome French tip extensions on sculpted almond builder gel with delicate crystal accents.'
   },
   {
@@ -326,7 +326,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     role: 'Creative Director & Celebrity Bridal Artist',
     experience: '14+ Years',
     specialty: 'HD Airbrush Bridal & Cultural Draping',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=75',
     rating: 4.98,
     reviewsCount: 380
   },
@@ -336,7 +336,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     role: 'Master Hair Sculptor & Balayage Specialist',
     experience: '11+ Years (Trained in London)',
     specialty: 'Custom Balayage, Precision Cuts & Keratin',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=75',
     rating: 4.95,
     reviewsCount: 420
   },
@@ -346,7 +346,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     role: 'Senior Esthetician & Skin Therapist',
     experience: '9+ Years',
     specialty: 'Hydra Facials, Glass Skin & Cryo Therapy',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=75',
     rating: 4.97,
     reviewsCount: 295
   },
@@ -356,7 +356,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     role: 'Nail Artist & Lash Specialist',
     experience: '7+ Years',
     specialty: 'Russian Manicures, 3D Chrome & Lash Lifts',
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=75',
     rating: 4.94,
     reviewsCount: 210
   }

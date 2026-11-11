@@ -89,16 +89,21 @@ export const HydraGlassSkinSection: React.FC<HydraGlassSkinSectionProps> = ({ on
             {/* Primary 3D Card: Hydra Facial in Action */}
             <TiltCard3D className="w-full max-w-lg aspect-[4/3] rounded-3xl shadow-3d-float border border-sky-400/30 overflow-hidden relative group">
               <div className="relative w-full h-full">
-                <img
-                  src="/assets/images/hydra_glass_facial.jpg"
-                  alt="Hydra-Infusion Glass Skin Facial Clinical Treatment"
-                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                  onError={(e) => {
-                    if (hydraFacialImg && e.currentTarget.src !== hydraFacialImg) {
-                      e.currentTarget.src = hydraFacialImg;
-                    }
-                  }}
-                />
+                <picture>
+                  <source srcSet="/assets/images/hydra_glass_facial.webp" type="image/webp" />
+                  <img
+                    src="/assets/images/hydra_glass_facial.jpg"
+                    alt="Hydra-Infusion Glass Skin Facial Clinical Treatment"
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                    onError={(e) => {
+                      if (hydraFacialImg && e.currentTarget.src !== hydraFacialImg) {
+                        e.currentTarget.src = hydraFacialImg;
+                      }
+                    }}
+                  />
+                </picture>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0d1419] via-transparent to-black/20 opacity-80" />
 
                 {/* Floating 3D Badge on Top Left */}
@@ -122,16 +127,21 @@ export const HydraGlassSkinSection: React.FC<HydraGlassSkinSectionProps> = ({ on
             {/* Secondary Floating 3D Card: Overlapping Glass Skin Result */}
             <div className="hidden sm:block absolute -bottom-10 -right-6 lg:-right-10 w-52 sm:w-60 aspect-square rounded-2xl p-1.5 bg-gradient-to-br from-sky-400/40 via-cyan-500/20 to-sky-950/80 shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_30px_rgba(56,189,248,0.3)] backdrop-blur-xl border border-sky-300/40 z-20 animate-float-3d">
               <div className="relative w-full h-full rounded-xl overflow-hidden group">
-                <img
-                  src="/assets/images/hydra_skin_glow.jpg"
-                  alt="Translucent Korean Glass Skin Result"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  onError={(e) => {
-                    if (hydraGlowImg && e.currentTarget.src !== hydraGlowImg) {
-                      e.currentTarget.src = hydraGlowImg;
-                    }
-                  }}
-                />
+                <picture>
+                  <source srcSet="/assets/images/hydra_skin_glow.webp" type="image/webp" />
+                  <img
+                    src="/assets/images/hydra_skin_glow.jpg"
+                    alt="Translucent Korean Glass Skin Result"
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    onError={(e) => {
+                      if (hydraGlowImg && e.currentTarget.src !== hydraGlowImg) {
+                        e.currentTarget.src = hydraGlowImg;
+                      }
+                    }}
+                  />
+                </picture>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute bottom-3 left-3 right-3 text-white">
                   <span className="text-[9px] uppercase tracking-[0.2em] text-cyan-300 font-bold block">

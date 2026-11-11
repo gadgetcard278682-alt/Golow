@@ -14,14 +14,19 @@ export const AboutSection: React.FC = () => {
             {/* Primary 3D Tilt Card */}
             <TiltCard3D className="aspect-[4/5] max-w-md mx-auto shadow-3d-card rounded-3xl">
               <div className="relative w-full h-full">
-                <img
-                  src="/assets/images/hero_salon_beauty.jpg"
-                  alt="Precision Hair Styling in Glow Beauty Studio"
-                  className="w-full h-full object-cover object-center"
-                  onError={(e) => {
-                    e.currentTarget.src = 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=80';
-                  }}
-                />
+                <picture>
+                  <source srcSet="/assets/images/hero_salon_beauty.webp" type="image/webp" />
+                  <img
+                    src="/assets/images/hero_salon_beauty.jpg"
+                    alt="Precision Hair Styling in Glow Beauty Studio"
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover object-center"
+                    onError={(e) => {
+                      e.currentTarget.src = 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=75';
+                    }}
+                  />
+                </picture>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#19120f] via-transparent to-transparent opacity-85" />
                 <div className="absolute bottom-6 left-6 right-6 text-white transform-style-3d translate-z-20">
                   <span className="text-[10px] tracking-[0.25em] uppercase text-[#dfc18b] font-semibold block mb-1">
@@ -39,14 +44,19 @@ export const AboutSection: React.FC = () => {
 
             {/* Overlapping Secondary 3D Photo (Layered Depth Element) */}
             <div className="hidden sm:block absolute -bottom-6 -right-4 w-44 h-48 rounded-2xl overflow-hidden border-2 border-[#dfc18b] shadow-3d-float z-20 transform-style-3d hover:translate-y-[-6px] transition-transform duration-300">
-              <img
-                src="/assets/images/hydra_skin_glow.jpg"
-                alt="Aromatherapy Holistic Care"
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  e.currentTarget.src = 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=500&q=80';
-                }}
-              />
+              <picture>
+                <source srcSet="/assets/images/hydra_skin_glow.webp" type="image/webp" />
+                <img
+                  src="/assets/images/hydra_skin_glow.jpg"
+                  alt="Aromatherapy Holistic Care"
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.currentTarget.src = 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=400&q=75';
+                  }}
+                />
+              </picture>
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
               <div className="absolute bottom-2.5 left-2.5 right-2.5 text-white">
                 <span className="text-[9px] uppercase tracking-wider text-[#dfc18b] font-bold block">Holistic Spa</span>

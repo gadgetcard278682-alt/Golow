@@ -121,6 +121,8 @@ export const TransformationSlider: React.FC = () => {
             <img
               src={activeCase.afterImg}
               alt={`${activeCase.title} - After`}
+              loading="lazy"
+              decoding="async"
               className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
               referrerPolicy="no-referrer"
               onError={(e) => {
@@ -139,6 +141,8 @@ export const TransformationSlider: React.FC = () => {
               <img
                 src={activeCase.beforeImg}
                 alt={`${activeCase.title} - Before`}
+                loading="lazy"
+                decoding="async"
                 className="absolute inset-0 w-full h-full object-cover object-center max-w-none"
                 style={{ width: containerRef.current ? `${containerRef.current.clientWidth}px` : '100%' }}
                 referrerPolicy="no-referrer"

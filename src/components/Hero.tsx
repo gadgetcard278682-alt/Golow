@@ -90,16 +90,22 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
           <div className="lg:col-span-5 relative perspective-1200 flex items-center justify-center">
             <TiltCard3D className="w-full max-w-md aspect-[4/5] rounded-3xl shadow-3d-float border border-[#dfc18b]/45 overflow-hidden relative group">
               <div className="relative w-full h-full">
-                <img
-                  src="/assets/images/hero_salon_beauty.jpg"
-                  alt="Glow Beauty Studio Signature Model"
-                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                  onError={(e) => {
-                    if (heroBeautyImg && e.currentTarget.src !== heroBeautyImg) {
-                      e.currentTarget.src = heroBeautyImg;
-                    }
-                  }}
-                />
+                <picture>
+                  <source srcSet="/assets/images/hero_salon_beauty.webp" type="image/webp" />
+                  <img
+                    src="/assets/images/hero_salon_beauty.jpg"
+                    alt="Glow Beauty Studio Signature Model"
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                    onError={(e) => {
+                      if (heroBeautyImg && e.currentTarget.src !== heroBeautyImg) {
+                        e.currentTarget.src = heroBeautyImg;
+                      }
+                    }}
+                  />
+                </picture>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#19120f] via-black/15 to-transparent opacity-80" />
 
                 {/* Floating 3D Badge on Top Left */}

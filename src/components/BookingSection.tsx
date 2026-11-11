@@ -152,14 +152,19 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
           <div className="lg:col-span-5 bg-[#19120f] text-white p-8 sm:p-10 rounded-3xl border border-[#dfc18b]/35 shadow-3d-card relative overflow-hidden transform-style-3d">
             {/* Background Studio Ambience Image */}
             <div className="absolute inset-0 z-0 opacity-25 pointer-events-none">
-              <img
-                src="/assets/images/concierge_consult_spa.jpg"
-                alt="Studio Sanctuary"
-                className="w-full h-full object-cover scale-105"
-                onError={(e) => {
-                  e.currentTarget.src = 'https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1000&q=80';
-                }}
-              />
+              <picture>
+                <source srcSet="/assets/images/concierge_consult_spa.webp" type="image/webp" />
+                <img
+                  src="/assets/images/concierge_consult_spa.jpg"
+                  alt="Studio Sanctuary"
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover scale-105"
+                  onError={(e) => {
+                    e.currentTarget.src = 'https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=75';
+                  }}
+                />
+              </picture>
               <div className="absolute inset-0 bg-gradient-to-t from-[#19120f] via-[#19120f]/80 to-[#19120f]/60" />
             </div>
 
@@ -180,14 +185,19 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
               {/* 3D Visual Suite Preview Card */}
               <div className="mb-6 rounded-2xl overflow-hidden border border-[#dfc18b]/40 shadow-3d-float relative group">
                 <div className="h-32 w-full relative">
-                  <img
-                    src="/assets/images/concierge_consult_spa.jpg"
-                    alt="Private Treatment Suite"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    onError={(e) => {
-                      e.currentTarget.src = 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80';
-                    }}
-                  />
+                  <picture>
+                    <source srcSet="/assets/images/concierge_consult_spa.webp" type="image/webp" />
+                    <img
+                      src="/assets/images/concierge_consult_spa.jpg"
+                      alt="Private Treatment Suite"
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      onError={(e) => {
+                        e.currentTarget.src = 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=75';
+                      }}
+                    />
+                  </picture>
                   <div className="absolute inset-0 bg-gradient-to-t from-[#19120f] via-black/30 to-transparent" />
                   <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-xs text-white">
                     <span className="font-serif text-sm font-semibold text-[#dfc18b]">Private Sanctuary Suite</span>

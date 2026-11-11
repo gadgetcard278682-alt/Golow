@@ -19,7 +19,7 @@ export const AboutSection: React.FC = () => {
                   alt="Precision Hair Styling in Glow Beauty Studio"
                   className="w-full h-full object-cover object-center"
                   onError={(e) => {
-                    e.currentTarget.src = '/src/assets/images/hero_salon_beauty.jpg';
+                    e.currentTarget.src = '/assets/images/hero_salon_beauty.jpg';
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#19120f] via-transparent to-transparent opacity-85" />
@@ -44,7 +44,7 @@ export const AboutSection: React.FC = () => {
                 alt="Aromatherapy Holistic Care"
                 className="w-full h-full object-cover"
                 onError={(e) => {
-                  e.currentTarget.src = '/src/assets/images/hydra_skin_glow.jpg';
+                  e.currentTarget.src = '/assets/images/hydra_skin_glow.jpg';
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />

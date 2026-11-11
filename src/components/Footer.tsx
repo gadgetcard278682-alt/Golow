@@ -1,16 +1,18 @@
 import React from 'react';
-import { Phone, Mail, MapPin, Clock, MessageCircle, Sparkles, User, HelpCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, MessageCircle, Sparkles, User, HelpCircle, Shield } from 'lucide-react';
 
 interface FooterProps {
   onOpenProfile: () => void;
   onOpenTutorial: () => void;
   onOpenBooking: () => void;
+  onOpenSuperuser?: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({
   onOpenProfile,
   onOpenTutorial,
-  onOpenBooking
+  onOpenBooking,
+  onOpenSuperuser,
 }) => {
   return (
     <footer className="bg-[#140e0b] text-[#ded3cb] border-t border-[#c59b53]/25 pt-16 pb-12">
@@ -117,7 +119,7 @@ export const Footer: React.FC<FooterProps> = ({
           <div>
             © 2026 Glow Beauty Studio. All Rights Reserved. Crafted for elegance &amp; glow.
           </div>
-          <div className="flex items-center gap-4 flex-wrap">
+          <div className="flex items-center gap-3.5 flex-wrap">
             <button onClick={onOpenTutorial} className="hover:text-[#dfc18b] transition-colors">
               App Tour Guide
             </button>
@@ -125,6 +127,19 @@ export const Footer: React.FC<FooterProps> = ({
             <button onClick={onOpenProfile} className="hover:text-[#dfc18b] transition-colors">
               VIP Profile
             </button>
+            {onOpenSuperuser && (
+              <>
+                <span>·</span>
+                <button
+                  onClick={onOpenSuperuser}
+                  className="text-[#dfc18b] hover:text-white font-semibold transition-colors flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#dfc18b]/15 hover:bg-[#dfc18b]/25 border border-[#dfc18b]/35 shadow-sm"
+                  title="Admin Panel"
+                >
+                  <Shield className="w-3.5 h-3.5 text-[#dfc18b]" />
+                  <span>Admin Panel</span>
+                </button>
+              </>
+            )}
             <span>·</span>
             <a href="#services" className="hover:text-[#dfc18b] transition-colors">
               Rituals Menu

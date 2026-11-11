@@ -222,7 +222,7 @@ export const SuperuserModal: React.FC<SuperuserModalProps> = ({
                 </span>
               </div>
               <span className="text-[11px] text-[#ded3cb]/70">
-                Project ID: <strong className="text-white font-mono">{SUPABASE_PROJECT_ID}</strong>
+                Salon Management &amp; Cloud Database Console
               </span>
             </div>
           </div>
@@ -515,17 +515,17 @@ export const SuperuserModal: React.FC<SuperuserModalProps> = ({
                     Supabase Live Connection Details
                   </h4>
                   <p className="text-xs text-[#ded3cb]/70 font-light">
-                    Configured with your Project ID and API Key. All appointment form submissions sync directly into this database.
+                    Configured with your secure Cloud Database and API Key. All appointment form submissions sync directly into this database.
                   </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="p-4 rounded-2xl bg-black/40 border border-[#c59b53]/30 space-y-1">
                     <span className="text-[10px] uppercase tracking-wider text-[#dfc18b] font-bold block">
-                      Supabase Project ID
+                      Database Engine
                     </span>
-                    <span className="font-mono text-sm text-white block select-all">
-                      {SUPABASE_PROJECT_ID}
+                    <span className="font-mono text-sm text-white block">
+                      Supabase Cloud DB (Connected)
                     </span>
                   </div>
 
@@ -610,14 +610,14 @@ export const SuperuserModal: React.FC<SuperuserModalProps> = ({
 
                 <div className="flex items-center justify-between text-xs text-[#ded3cb]/80 pt-2">
                   <span>
-                    Direct SQL Editor URL:{' '}
+                    Direct SQL Console:{' '}
                     <a
                       href={`https://supabase.com/dashboard/project/${SUPABASE_PROJECT_ID}/sql`}
                       target="_blank"
                       rel="noreferrer"
-                      className="text-[#dfc18b] underline"
+                      className="text-[#dfc18b] hover:text-white underline font-medium"
                     >
-                      supabase.com/dashboard/project/{SUPABASE_PROJECT_ID}/sql
+                      Open Supabase SQL Dashboard ↗
                     </a>
                   </span>
                 </div>

@@ -94,7 +94,7 @@ export const HydraGlassSkinSection: React.FC<HydraGlassSkinSectionProps> = ({ on
                   alt="Hydra-Infusion Glass Skin Facial Clinical Treatment"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                   onError={(e) => {
-                    e.currentTarget.src = '/src/assets/images/hydra_glass_facial_1793899863729.jpg';
+                    e.currentTarget.src = '/assets/images/hydra_glass_facial_1793899863729.jpg';
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0d1419] via-transparent to-black/20 opacity-80" />
@@ -125,7 +125,7 @@ export const HydraGlassSkinSection: React.FC<HydraGlassSkinSectionProps> = ({ on
                   alt="Translucent Korean Glass Skin Result"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   onError={(e) => {
-                    e.currentTarget.src = '/src/assets/images/hydra_skin_glow_1793899876817.jpg';
+                    e.currentTarget.src = '/assets/images/hydra_skin_glow_1793899876817.jpg';
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />

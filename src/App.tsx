@@ -17,7 +17,7 @@ import { UserProfileModal } from './components/UserProfileModal';
 import { AppTutorial } from './components/AppTutorial';
 import { SuperuserModal } from './components/SuperuserModal';
 import { Service, Booking, UserProfile } from './types';
-import { Compass, ArrowUp, Shield } from 'lucide-react';
+import { Compass, ArrowUp } from 'lucide-react';
 
 const DEFAULT_PROFILE: UserProfile = {
   username: 'Riya Kapoor',
@@ -247,6 +247,7 @@ export default function App() {
         onOpenProfile={() => setIsProfileOpen(true)}
         onOpenTutorial={() => setIsTutorialOpen(true)}
         onOpenBooking={() => scrollToBooking()}
+        onOpenSuperuser={() => setIsSuperuserOpen(true)}
       />
 
       {/* Service Inclusions Modal */}
@@ -296,19 +297,6 @@ export default function App() {
       >
         <Compass className="w-5 h-5 group-hover:rotate-45 transition-transform" />
         <span className="hidden sm:inline pr-1">Studio Tour</span>
-      </button>
-
-      {/* Floating Bottom Admin Panel Button - The ONLY Admin Panel button on the website */}
-      <button
-        onClick={() => setIsSuperuserOpen(true)}
-        className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 bg-gradient-to-r from-[#f5e4cc] via-[#dfc18b] to-[#b3853b] hover:from-white hover:to-[#dfc18b] text-[#19120f] border-2 border-[#dfc18b] px-5 py-2.5 rounded-full shadow-[0_10px_30px_rgba(223,193,139,0.55),0_4px_16px_rgba(0,0,0,0.6)] hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-2 text-xs font-bold tracking-wider uppercase cursor-pointer"
-        title="Admin Panel"
-      >
-        <span className="w-2 h-2 rounded-full bg-[#19120f] animate-pulse" />
-        <Shield className="w-4 h-4 text-[#19120f]" />
-        <span className="font-sans font-extrabold text-[12px] tracking-wide text-[#19120f]">
-          Admin Panel
-        </span>
       </button>
 
       {/* Back to Top Floating Button */}

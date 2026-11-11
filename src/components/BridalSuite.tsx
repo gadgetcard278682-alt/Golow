@@ -266,7 +266,7 @@ export const BridalSuite: React.FC<BridalSuiteProps> = ({ onBookBridal }) => {
                     alt={currentPackage.name}
                     className="w-full h-full object-cover object-center transition-all duration-700"
                     onError={(e) => {
-                      e.currentTarget.src = '/src/assets/images/bridal_imperial_art_1793899837776.jpg';
+                      e.currentTarget.src = '/assets/images/bridal_imperial_art_1793899837776.jpg';
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#19120f] via-black/25 to-transparent opacity-90" />
@@ -310,7 +310,7 @@ export const BridalSuite: React.FC<BridalSuiteProps> = ({ onBookBridal }) => {
                     alt="Imperial Bridal Studio Royal Bride with Antique Kundan Jewelry"
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                     onError={(e) => {
-                      e.currentTarget.src = '/src/assets/images/bridal_imperial_art_1793899837776.jpg';
+                      e.currentTarget.src = '/assets/images/bridal_imperial_art_1793899837776.jpg';
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#19120f] via-black/20 to-transparent opacity-85" />
@@ -341,7 +341,7 @@ export const BridalSuite: React.FC<BridalSuiteProps> = ({ onBookBridal }) => {
                     alt="Intricate Couture Bridal Dupatta and Jewelry Drape"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     onError={(e) => {
-                      e.currentTarget.src = '/src/assets/images/bridal_couture_details_1793899850599.jpg';
+                      e.currentTarget.src = '/assets/images/bridal_couture_details_1793899850599.jpg';
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />

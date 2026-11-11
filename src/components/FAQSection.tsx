@@ -65,7 +65,7 @@ export const FAQSection: React.FC = () => {
                   alt="We Are Here To Assist - Luxury Studio Concierge & Consultation"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                   onError={(e) => {
-                    e.currentTarget.src = '/src/assets/images/concierge_consult_spa.jpg';
+                    e.currentTarget.src = '/assets/images/concierge_consult_spa.jpg';
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#19120f] via-black/30 to-transparent opacity-85" />

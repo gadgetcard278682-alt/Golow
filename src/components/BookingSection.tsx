@@ -179,11 +179,11 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
               <div className="mb-6 rounded-2xl overflow-hidden border border-[#dfc18b]/40 shadow-3d-float relative group">
                 <div className="h-32 w-full relative">
                   <img
-                    src="/src/assets/images/concierge_consult_spa.jpg"
+                    src="/assets/images/concierge_consult_spa.jpg"
                     alt="Private Treatment Suite"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     onError={(e) => {
-                      e.currentTarget.src = '/public/assets/images/concierge_consult_spa.jpg';
+                      e.currentTarget.src = 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80';
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#19120f] via-black/30 to-transparent" />

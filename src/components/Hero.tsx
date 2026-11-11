@@ -95,7 +95,7 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
                   alt="Glow Beauty Studio Signature Model"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                   onError={(e) => {
-                    e.currentTarget.src = '/src/assets/images/hero_salon_beauty.jpg';
+                    e.currentTarget.src = '/assets/images/hero_salon_beauty.jpg';
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#19120f] via-black/15 to-transparent opacity-80" />
